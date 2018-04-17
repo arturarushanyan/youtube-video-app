@@ -2,8 +2,7 @@ import React from 'react';
 
 export default ({ video, onVideoSelect }) => {
     const imageUrl = video.snippet.thumbnails.default.url;
-    const title = video.snippet.title;
-    const uploader = video.snippet.channelTitle;
+    const { title, channelTitle } = video.snippet;
 
     return (
         <li onClick={() => onVideoSelect(video)} className="list-group-item">
@@ -17,7 +16,7 @@ export default ({ video, onVideoSelect }) => {
                         {title}
                     </div>
                     <div className="uploader">
-                        Uploader: {uploader}
+                        Uploader: {channelTitle}
                     </div>
                 </div>
             </div>

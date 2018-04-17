@@ -32,6 +32,7 @@ html, body {
 
 .list-group-item, .list-group-item:focus, .list-group-item:hover{
     z-index: 0;
+    cursor: pointer;
 }
 
 .close-button {
