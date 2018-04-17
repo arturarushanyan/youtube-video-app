@@ -32,13 +32,14 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.onVideoSearch('react');
+        this.onVideoSearch('reactjs');
     }
 
     render() {
         return (
             <div className="video-app">
-              <SearchBar />
+              <h3 className="app-heading">Youtube Search App with ReactJS</h3>
+              <SearchBar onSearchTermChange={ term => this.onVideoSearch(term)}/>
                 <VideoDetail video={this.state.selectedVideo}/>
                 <VideoList
                     videos={this.state.videos}
