@@ -4,6 +4,7 @@ import Config from "../config";
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+import ViewSwitcher from './ViewSwitcher';
 import Modal from 'react-modal';
 import '../styles/bootstrap.min.css';
 import '../styles/App.css';
@@ -56,6 +57,7 @@ class App extends Component {
             <div className={`video-app ${this.state.layout}`}>
               <h3 className="app-heading">Youtube Search App with ReactJS</h3>
               <SearchBar onSearchTermChange={ term => this.onVideoSearch(term)}/>
+                <ViewSwitcher />
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
