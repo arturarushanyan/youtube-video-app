@@ -13,7 +13,7 @@ export default (props) => {
     });
 
     return (
-        <ul className="list-group col-md-8">
+        <ul className="list-group col-md-8 col-sm-12">
             { videoItems }
         </ul>
     )

@@ -15,6 +15,8 @@ class App extends Component {
         super(props);
         this.onVideoSelect = this.onVideoSelect.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.onSwitchToListView = this.onSwitchToListView.bind(this);
+        this.onSwitchToGridView = this.onSwitchToGridView.bind(this);
         this.state = {
             videos: [],
             selectedVideo: null,
@@ -47,6 +49,16 @@ class App extends Component {
         this.setState({ modalIsOpen: false});
     }
 
+    //handler for switching to grid view
+    onSwitchToGridView() {
+        this.setState({layout: 'grid-view'})
+    }
+
+    //handler for switching to list view
+    onSwitchToListView() {
+        this.setState({layout: 'list-view'})
+    }
+
     componentDidMount() {
         // calling videoSearch handler with empty string as an argument because of fetching some default videos for the app
         this.onVideoSearch('');
@@ -57,7 +69,11 @@ class App extends Component {
             <div className={`video-app ${this.state.layout}`}>
               <h3 className="app-heading">Youtube Search App with ReactJS</h3>
               <SearchBar onSearchTermChange={ term => this.onVideoSearch(term)}/>
-                <ViewSwitcher />
+                <ViewSwitcher
+                    currentLayout={this.state.layout}
+                    onSwitchToGridView={this.onSwitchToGridView}
+                    onSwitchToListView={this.onSwitchToListView}
+                />
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
