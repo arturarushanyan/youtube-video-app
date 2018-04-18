@@ -87,19 +87,23 @@ html, body {
 }
 /*Media Queries*/
 @media screen and (max-width: 1280px) {
+
     .video-app {
         width: 90%;
     }
 }
 
 @media screen and (max-width: 560px) {
+
     .video-app.grid-view .list-group-item {
         width: 100%;
     }
+
     .video-app.grid-view .video-list.media {
         display: flex;
         text-align: left;
     }
+
     .video-app.grid-view .media-body {
         width: calc(100% - 120px);
         padding-left: 10px;
