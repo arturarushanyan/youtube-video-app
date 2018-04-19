@@ -1,18 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import videosReducer from './reducers/videosReducer';
-import viewReducer from './reducers/viewReducer';
+import rootReducer from './reducers';
+
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(
-    combineReducers({
-        videosData: videosReducer,
-        viewData: viewReducer
-    })
-);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
     <Provider store={store}>
