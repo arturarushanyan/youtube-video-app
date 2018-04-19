@@ -1,4 +1,4 @@
-// videos reducer
+import {SELECT_VIDEO, SEARCH_VIDEO} from "../constants/action-types";
 
 const videosReducerDefaultState = {
     videos: [],
@@ -7,12 +7,12 @@ const videosReducerDefaultState = {
 
 export default (state = videosReducerDefaultState, action) => {
     switch (action.type) {
-        case 'SELECT_VIDEO':
+        case SELECT_VIDEO:
             return {
                 ...state,
                 selectedVideo: action.video
             };
-        case 'SEARCH_VIDEO':
+        case SEARCH_VIDEO:
             return {
                 ...state,
                 videos: [

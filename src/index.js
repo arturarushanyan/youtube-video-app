@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
     combineReducers({
-        videoData: videosReducer,
+        videosData: videosReducer,
         viewData: viewReducer
     })
 );
